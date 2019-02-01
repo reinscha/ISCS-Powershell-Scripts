@@ -48,9 +48,9 @@ function MailboxAccess {
                 $AccessList += (Get-ADGroupMember -Identity $item -Server tss.oregonstate.edu -Recursive | select name | Out-String) 
             }
         }
-        
+            #Format and print the output
+            Write-Host "Users who have access:`n"
+            Write-Host $AccessList 
     }
-    #Format and print the output
-    Write-Host "Users who have access:`n"
-    Write-Host $AccessList 
+    
 }
